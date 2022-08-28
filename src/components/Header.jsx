@@ -1,12 +1,17 @@
-import React from 'react'
-import "../styles/Header.scss"
+import React from 'react';
+import "../styles/Header.scss";
+import DesktopMenu from '../components/DesktopMenu';
+
+import menu from '@icons/icon_menu.svg';
+import logo from '@logos/logo_yard_sale.svg';
+import choppingCart from '@icons/icon_shopping_cart.svg';
 
 const Header = () => {
     return (
         <nav className="navbar">
         <div className="nav-left">
-            <img className="nav-left_menulogo" src="Platzi_YardSale_Icons/icon_menu.svg" alt="menu" />
-            <img className="nav-left_logo" src="Platzi_YardSale_Logos/logo_yard_sale.svg" alt="logo" />
+            <img className="nav-left_menulogo" src={menu} alt="menu" />
+            <img className="nav-left_logo" src={logo} alt="logo" />
             <ul className="nav-left_list">
                 <li className="nav-left_item">
                     <a href="/">ALL</a>
@@ -32,7 +37,7 @@ const Header = () => {
                 <li className="nav-right_cart" >
                     <a href="/">
                         <figure className="nav-right_icon">
-                            <img src="/Platzi_YardSale_Icons/icon_shopping_cart.svg" alt="" />
+                            <img src={choppingCart} alt="" />
                             <div>2</div>
                         </figure>
                     </a>
@@ -40,8 +45,15 @@ const Header = () => {
             </ul>
         </div>
     </nav>
+            
 
     );
 }
+
+
+
+
+
+
 
 export default Header;
