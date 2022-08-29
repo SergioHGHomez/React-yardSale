@@ -1,7 +1,5 @@
 import React from 'react';
-import "../styles/Header.scss";
-import DesktopMenu from '../components/DesktopMenu';
-
+import "@styles/Header.scss";
 import menu from '@icons/icon_menu.svg';
 import logo from '@logos/logo_yard_sale.svg';
 import choppingCart from '@icons/icon_shopping_cart.svg';

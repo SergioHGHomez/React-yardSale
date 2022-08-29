@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/ProductDetail.scss';
+import '@styles/ProductDetail.scss';
 import Description from '../components/Description';
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/Description.scss';
+import '@styles/Description.scss';
 
 import closeIcon from "@icons/icon_close.png";
 import addIcon from "@icons/bt_add_to_cart.svg"
