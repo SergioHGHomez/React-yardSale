@@ -6,7 +6,7 @@ import Description from '../components/Description';
 
 const ProductDetail  = () => {
     return(
-        <section className="ProductDetail">
+        <section className="ProductDetail inactive">
             <Description />
         </section>
     );

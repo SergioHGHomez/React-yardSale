@@ -12,7 +12,7 @@ const DesktopMenu = () => {
           <a href="">My account</a>
         </li>
         <li>
-          <a href="">sign out</a>
+          <a href="/login">sign out</a>
         </li>
       </ul>
     </div>

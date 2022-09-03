@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "@styles/Header.scss";
 import menu from '@icons/icon_menu.svg';
 import logo from '@logos/logo_yard_sale.svg';
 import choppingCart from '@icons/icon_shopping_cart.svg';
+import DesktopMenu from '@components/DesktopMenu';
 
 const Header = () => {
+    const [toggle, setToggle] = useState(false);
+
+    const handleToggle = () => {
+        setToggle(!toggle);
+    }
+
     return (
         <nav className="navbar">
         <div className="nav-left">
@@ -31,7 +38,9 @@ const Header = () => {
 
         <div className="nav-right">
             <ul className="nav-right_list">
-                <li className="nav-right_menu">user@mail.com</li>
+                <li className="nav-right_menu" onClick={handleToggle}>
+                    user@mail.com
+                </li>
                 <li className="nav-right_cart" >
                     <a href="/">
                         <figure className="nav-right_icon">
@@ -42,6 +51,8 @@ const Header = () => {
                 </li>
             </ul>
         </div>
+        
+        {toggle && <DesktopMenu />}
     </nav>
             
 

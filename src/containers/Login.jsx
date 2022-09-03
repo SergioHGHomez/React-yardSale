@@ -1,22 +1,41 @@
-import React from "react";
+import React, { useRef} from "react";
+import { useNavigate } from "react-router-dom";
 import "@styles/login.scss";
+import logo from "@logos/logo_yard_sale.svg";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const form = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const formData = new FormData(form.current);
+    const logInData = {
+      email: formData.get("email-input"),
+      password: formData.get("password-input")
+    }
+
+    if (logInData.email !== '' && logInData.password !== '' ){
+      navigate("/")
+
+    }
+  }
+
   return (
     <div className="container-login">
       <div className="form-container">
         <img
           className="form-container_img"
-          src="Platzi_YardSale_Logos/logo_yard_sale.svg"
+          src={logo}
           alt="logo"
         />
-        <form className="form-container_form" action="/">
+        <form className="form-container_form" action="/" ref={form}>
           <label className="form-container_label" for="email-input">
             Email address
           </label>
           <input
             className="form-container_input"
-            id="email-input"
+            name="email-input"
             type="text"
           />
           <label className="form-container_label" for="password-input">
@@ -24,10 +43,10 @@ const Login = () => {
           </label>
           <input
             className="form-container_input"
-            id="password-input"
-            type="text"
+            name="password-input"
+            type="password"
           />
-          <input className="primary-button" type="button" value="log in" />
+          <input className="primary-button" type="submit" value="log in" onClick={handleSubmit} />
         </form>
 
         <p className="form-container_p">
