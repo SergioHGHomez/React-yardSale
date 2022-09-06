@@ -1,9 +1,11 @@
-import React, { useRef} from "react";
+import React, { useRef, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import "@styles/login.scss";
 import logo from "@logos/logo_yard_sale.svg";
+import AppContext from "../context/AppContext";
 
 const Login = () => {
+  const { saveEmail } = useContext(AppContext)
   const navigate = useNavigate();
   const form = useRef(null);
 
@@ -16,6 +18,7 @@ const Login = () => {
     }
 
     if (logInData.email !== '' && logInData.password !== '' ){
+      saveEmail(logInData.email)
       navigate("/")
 
     }

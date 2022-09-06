@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import "@styles/Header.scss";
 import menu from '@icons/icon_menu.svg';
 import logo from '@logos/logo_yard_sale.svg';
 import choppingCart from '@icons/icon_shopping_cart.svg';
 import DesktopMenu from '@components/DesktopMenu';
+import AppContext from '../context/AppContext';
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
+    const {state} = useContext(AppContext);
 
     const handleToggle = () => {
         setToggle(!toggle);
@@ -39,13 +41,13 @@ const Header = () => {
         <div className="nav-right">
             <ul className="nav-right_list">
                 <li className="nav-right_menu" onClick={handleToggle}>
-                    user@mail.com
+                    {state.email}
                 </li>
                 <li className="nav-right_cart" >
                     <a href="/">
                         <figure className="nav-right_icon">
                             <img src={choppingCart} alt="" />
-                            <div>2</div>
+                            {state.cart.length > 0 ? <div>{state.cart.length}</div> : null  }
                         </figure>
                     </a>
                 </li>

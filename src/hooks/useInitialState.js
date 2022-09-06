@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const initialState = {
     cart: [],
+    email: 'email@mail.com',
 }
 
 const useInitialState = () => {
@@ -15,9 +16,21 @@ const useInitialState = () => {
         });
     };
 
+    const saveEmail = userEmail => {
+
+        setState({
+
+            ...state,
+            email: userEmail,
+
+        }
+        )
+    }
+
     return{
         state,
-        addToCart
+        addToCart,
+        saveEmail
     }
 }
 
