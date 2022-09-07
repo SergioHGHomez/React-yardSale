@@ -4,14 +4,21 @@ import menu from '@icons/icon_menu.svg';
 import logo from '@logos/logo_yard_sale.svg';
 import choppingCart from '@icons/icon_shopping_cart.svg';
 import DesktopMenu from '@components/DesktopMenu';
+import Orders from '@components/Order';
 import AppContext from '../context/AppContext';
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
+    const [toggleBuyList, setToggleBuyList] = useState(false);
     const {state} = useContext(AppContext);
 
     const handleToggle = () => {
         setToggle(!toggle);
+    }
+
+    const handleToggleBuyList = (event) => {
+        event.preventDefault()
+        setToggleBuyList(!toggleBuyList)
     }
 
     return (
@@ -43,7 +50,7 @@ const Header = () => {
                 <li className="nav-right_menu" onClick={handleToggle}>
                     {state.email}
                 </li>
-                <li className="nav-right_cart" >
+                <li className="nav-right_cart" onClick={handleToggleBuyList}>
                     <a href="/">
                         <figure className="nav-right_icon">
                             <img src={choppingCart} alt="" />
@@ -55,6 +62,7 @@ const Header = () => {
         </div>
         
         {toggle && <DesktopMenu />}
+        {toggleBuyList && <Orders />}
     </nav>
             
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const initialState = {
     cart: [],
-    email: 'email@mail.com',
+    email: 'user@mail.com',
 }
 
 const useInitialState = () => {
