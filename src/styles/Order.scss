@@ -1,55 +1,6 @@
 @import 'vars';
 
 .order{
-    position: absolute;
-    top: 107px;
-    right: 8px;
-    display: grid;
-    justify-items: center;
-    justify-content: center;
-    padding: 32px;
-    border-radius: 0 0 25px 25px;
-    border: 2px solid var(--hospital-green);
-    background-color: var(--white);
-}
-
-.order-list{
-    width: 316px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.order-list_h1{
-    font-size: var(--lg);
-    margin-bottom: 16px;
-}
-
-.order-list_info{
-    width: 100%;
-    background:var(--Text-input-field) ;
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
-    padding: 16px;
-}
-
-.info_date{
-    font-weight: bold;
-    margin: 0px 0px 4px 0;
-}
-
-.info_articles{
-    margin: 0;
-    font-size: var(--sm);
-    font-weight: lighter;
-}
-
-.info_total{
-    font-weight: bold;
-}
-
-.order-list_card{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +8,7 @@
 
 }
 
-.card_item{
+.order_item{
     display: flex;
     align-items: center;
 }
@@ -69,6 +20,7 @@
 }
 
 .order-list_name{
+    width: 100px;
     font-weight: lighter;
     margin-left: 16px;
 }
@@ -77,12 +29,12 @@
     font-weight: bold;
 }
 
-@media (max-width: 600px) {
-    .order-list_h1{
-        display: none;
-    }
-    
+.order-closeIcon{
+    width: 16px;
+    cursor: pointer;
+    padding: 4px;
 }
+
 
 @media (max-width: 280px) {
     .card_item{

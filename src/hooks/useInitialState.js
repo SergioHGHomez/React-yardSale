@@ -16,6 +16,16 @@ const useInitialState = () => {
         });
     };
 
+    const removeToCart = payload => {
+
+        setState({
+            ...state,
+            cart: state.cart.filter((item) => {
+                return item.id !== payload.id
+            })
+        })
+    }
+
     const saveEmail = userEmail => {
 
         setState({
@@ -30,6 +40,7 @@ const useInitialState = () => {
     return{
         state,
         addToCart,
+        removeToCart,
         saveEmail
     }
 }
